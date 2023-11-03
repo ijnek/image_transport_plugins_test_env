@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<robot name="cameras" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <link name="base_link"/>
+  <link name="rgb_camera">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="depth_camera">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="base_link__rgb_camera" type="fixed">
+    <parent link="base_link"/>
+    <child link="rgb_camera"/>
+    <origin xyz="0 -0.5 0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="base_link__depth_camera" type="fixed">
+    <parent link="base_link"/>
+    <child link="depth_camera"/>
+    <origin xyz="0 0.5 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>
