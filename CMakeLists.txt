@@ -12,7 +12,7 @@ find_package(ament_cmake REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 # Install
-install(DIRECTORY launch urdf
+install(DIRECTORY launch rviz urdf
   DESTINATION share/${PROJECT_NAME}/)
 
 if(BUILD_TESTING)
