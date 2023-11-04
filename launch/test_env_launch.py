@@ -53,6 +53,8 @@ def generate_launch_description():
             '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
             # RGB image
             '/rgb_camera@sensor_msgs/msg/Image[ignition.msgs.Image',
+            # Depth camera
+            '/depth_camera@sensor_msgs/msg/Image[ignition.msgs.Image',
         ],
     ))
 
