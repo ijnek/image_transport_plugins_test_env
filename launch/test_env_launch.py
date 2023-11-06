@@ -44,17 +44,13 @@ def generate_launch_description():
         ],
     ))
 
-    # ROS <-> GZ Bridge
+    # ROS <-> GZ Bridge using Image Transport
     ld.add_action(Node(
-        package='ros_gz_bridge',
-        executable='parameter_bridge',
+        package='ros_gz_image',
+        executable='image_bridge',
         arguments=[
-            # Clock (GZ -> ROS2)
-            '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
-            # RGB image
-            '/rgb_camera@sensor_msgs/msg/Image[ignition.msgs.Image',
-            # Depth camera
-            '/depth_camera@sensor_msgs/msg/Image[ignition.msgs.Image',
+            'rgb_camera',  # RGB camera
+            'depth_camera'  # Depth camera
         ],
     ))
 
